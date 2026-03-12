@@ -369,14 +369,48 @@
             `).join('');
         }
 
-                function copiarPix() {
+function copiarPix() {
             const chavePix = "thaisa_geraldi@hotmail.com";
+            const textoSpan = document.getElementById("texto-copiar");
+            const textoOriginal = "Copiar chave PIX";
 
-            navigator.clipboard.writeText(chavePix).then(() => {
-                alert("Chave PIX copiada! 📋");
-            }).catch(() => {
-                alert("Não foi possível copiar automaticamente.");
-            });
+            // Função para dar o feedback visual no próprio botão
+            const mostrarSucesso = () => {
+                textoSpan.innerText = "Copiado! ✅";
+                textoSpan.classList.add("text-green-600", "font-bold");
+                
+                // Volta ao normal depois de 2 segundos
+                setTimeout(() => {
+                    textoSpan.innerText = textoOriginal;
+                    textoSpan.classList.remove("text-green-600", "font-bold");
+                }, 2000);
+            };
+
+            // Tenta usar a área de transferência moderna do celular/pc
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(chavePix).then(() => {
+                    mostrarSucesso();
+                }).catch(() => {
+                    textoSpan.innerText = "Erro ao copiar ❌";
+                    setTimeout(() => textoSpan.innerText = textoOriginal, 2000);
+                });
+            } else {
+                // Truque (Fallback) caso o celular seja mais antigo
+                const textArea = document.createElement("textarea");
+                textArea.value = chavePix;
+                textArea.style.position = "absolute";
+                textArea.style.left = "-999999px";
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    mostrarSucesso();
+                } catch (err) {
+                    textoSpan.innerText = "Erro ao copiar ❌";
+                    setTimeout(() => textoSpan.innerText = textoOriginal, 2000);
+                }
+                document.body.removeChild(textArea);
+            }
         }
 
         function selecionarPersonagem(id) {
