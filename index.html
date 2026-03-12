@@ -69,7 +69,7 @@
                     OPERAÇÃO<br><span class="text-yellow-300">IMPRESSORA 3D</span>
                 </h1>
                 <p class="text-lg opacity-90 font-light leading-relaxed mb-8">
-                    Ajude o Felipe a transformar a Fenda do Biquíni em realidade aumentada com uma <span class="font-bold text-yellow-300">Bambu Lab A1</span>!
+                    Faça parte dessa surpresa de aniversário e ajude o Felipe a ganhar a <span class="font-bold text-yellow-300">Bambu Lab A1</span>! 🎁  
                 </p>
                 <a href="#cotas" class="inline-block bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-black py-4 px-8 rounded-2xl text-lg shadow-xl transition-all hover:scale-105">
                     🐠 Quero ser padrinho!
@@ -82,7 +82,8 @@
                     class="w-full max-w-[260px] rounded-[2rem] shadow-2xl border-4 border-white transform -rotate-3 hover:rotate-0 transition-all duration-500"
                     style="height:340px;object-fit:contain;background:rgba(255,255,255,0.15);">
             </div>
-        </div>
+
+            </div>
 
         <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
             <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[60px] fill-[#f0f9ff]">
@@ -165,16 +166,18 @@
             </div>
 
             <!-- Valor livre — Plankton -->
-            <div onclick="openPaymentCustom()" class="bg-white p-8 rounded-[2rem] shadow-xl card-hover cursor-pointer border-t-8 border-purple-400 group flex flex-col">
-                <div class="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform overflow-hidden p-1">
-                    <img src="imagens/planktonicon.jpeg" alt="Plankton" class="w-full h-full object-contain rounded-xl"
-                         onerror="this.outerHTML='<span class=text-3xl>💜</span>'">
+<!-- Valor livre — Plankton -->
+                <div onclick="openPaymentCustom()" class="bg-white p-8 rounded-[2rem] shadow-xl card-hover cursor-pointer border-t-8 border-green-500 group flex flex-col">
+                    <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform overflow-hidden p-1">
+                        <img src="imagens/planktonicon.jpeg" alt="Plankton" class="w-full h-full object-contain rounded-xl"
+                            onerror="this.outerHTML='<span class=text-3xl>🦠</span>'">
+                    </div>
+                    <h4 class="text-xl font-bold mb-1">Valor Livre</h4>
+                    <div class="text-3xl font-funny text-green-600 mb-3">Você Escolhe</div>
+                    <p class="text-slate-500 text-sm leading-relaxed flex-1">Qualquer contribuição ajuda a roubar a fórmula... ops, digo, a comprar a impressora do Felipe! 🦠</p>
                 </div>
-                <h4 class="text-xl font-bold mb-1">Valor Livre</h4>
-                <div class="text-3xl font-funny text-purple-500 mb-3">R$ ???</div>
-                <p class="text-slate-500 text-sm leading-relaxed flex-1">Doe o valor que seu coração mandar! Todo centavo conta para a missão. 💜</p>
             </div>
-        </div>
+
 
         <!-- Mural -->
         <div class="max-w-2xl mx-auto mb-20">
@@ -195,23 +198,22 @@
     <div id="payment-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 hidden">
         <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-md" onclick="closeModal()"></div>
         <div class="bg-white rounded-[3rem] w-full max-w-lg p-8 relative z-10 shadow-2xl text-center overflow-y-auto max-h-[95vh]">
-
-            <!-- Passo 0: Valor livre -->
+<!-- Passo 0: Valor livre -->
             <div id="step-0" class="hidden">
-                <h3 class="text-3xl font-funny text-slate-800 mb-1">QUANTO VAI DAR? 💜</h3>
-                <p class="text-slate-400 text-sm mb-6">Digite o valor que você quer contribuir</p>
+                <h3 class="text-3xl font-funny text-slate-800 mb-1">Digite o valor: </h3>
+                <p></p>
                 <div class="relative mb-6">
-                    <span class="absolute left-5 top-1/2 -translate-y-1/2 text-2xl font-funny text-purple-500">R$</span>
+                    <span class="absolute left-5 top-1/2 -translate-y-1/2 text-2xl font-funny text-green-600">R$</span>
                     <input id="input-valor-livre" type="number" min="1" placeholder="0"
-                        class="w-full border-2 border-slate-200 focus:border-purple-400 rounded-2xl pl-14 pr-5 py-4 text-3xl font-funny text-slate-800 outline-none transition-all text-center">
+                        class="w-full border-2 border-slate-200 focus:border-green-500 rounded-2xl pl-14 pr-5 py-4 text-3xl font-funny text-slate-800 outline-none transition-all text-center">
                 </div>
                 <div class="flex gap-2 mb-6 justify-center flex-wrap">
-                    <button onclick="setValorLivre(20)"  class="bg-purple-50 hover:bg-purple-100 text-purple-700 font-bold px-4 py-2 rounded-xl text-sm transition-all">R$ 20</button>
-                    <button onclick="setValorLivre(30)"  class="bg-purple-50 hover:bg-purple-100 text-purple-700 font-bold px-4 py-2 rounded-xl text-sm transition-all">R$ 30</button>
-                    <button onclick="setValorLivre(75)"  class="bg-purple-50 hover:bg-purple-100 text-purple-700 font-bold px-4 py-2 rounded-xl text-sm transition-all">R$ 75</button>
-                    <button onclick="setValorLivre(150)" class="bg-purple-50 hover:bg-purple-100 text-purple-700 font-bold px-4 py-2 rounded-xl text-sm transition-all">R$ 150</button>
+                    <button onclick="setValorLivre(20)"  class="bg-green-50 hover:bg-green-100 text-green-700 font-bold px-4 py-2 rounded-xl text-sm transition-all">R$ 30</button>
+                    <button onclick="setValorLivre(30)"  class="bg-green-50 hover:bg-green-100 text-green-700 font-bold px-4 py-2 rounded-xl text-sm transition-all">R$ 60</button>
+                    <button onclick="setValorLivre(75)"  class="bg-green-50 hover:bg-green-100 text-green-700 font-bold px-4 py-2 rounded-xl text-sm transition-all">R$ 150</button>
+                    <button onclick="setValorLivre(150)" class="bg-green-50 hover:bg-green-100 text-green-700 font-bold px-4 py-2 rounded-xl text-sm transition-all">R$ 300</button>
                 </div>
-                <button onclick="confirmarValorLivre()" class="w-full bg-gradient-to-r from-purple-500 to-purple-400 text-white py-4 rounded-2xl font-bold shadow-xl shadow-purple-200 hover:opacity-90 transition-all mb-3 text-lg">
+                <button onclick="confirmarValorLivre()" class="w-full bg-gradient-to-r from-green-500 to-green-400 text-white py-4 rounded-2xl font-bold shadow-xl shadow-green-200 hover:opacity-90 transition-all mb-3 text-lg">
                     Continuar →
                 </button>
                 <button onclick="closeModal()" class="text-slate-400 text-sm font-medium hover:text-slate-600 transition-colors">Cancelar</button>
@@ -319,8 +321,8 @@
         window.addEventListener('DOMContentLoaded', async () => {
             lucide.createIcons();
 
-            document.getElementById('img-felipe').src     = 'imagens/felipe.jpeg';
-            document.getElementById('img-impressora').src = 'imagens/impressora.jpg';
+            document.getElementById('img-felipe').src     = 'imagens/felipe.png';
+            document.getElementById('img-impressora').src = 'imagens/impressora.png';
             document.getElementById('img-qrcode').src     = 'imagens/qrcode.jpeg';
 
             document.getElementById('img-felipe').onerror = function() {
